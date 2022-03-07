@@ -1,13 +1,203 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  box-sizing: border-box;
+  color: #8491a5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  background: rgb(239, 247, 239);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+header {
+  background: #fff;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100px;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 100px;
+}
+header nav img {
+  width: 100px;
+}
+header nav .nav-items {
+  display: flex;
+  align-items: center;
+}
+header nav .nav-items ul {
+  display: flex;
+
+  padding-right: 20px;
+}
+header nav .nav-items a {
+  background: rgb(48, 200, 214);
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+header nav ul li {
+  list-style: none;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+header ul li select {
+  outline: none;
+  border: none;
+  background: none;
+  margin-right: 20px;
+  cursor: pointer;
+}
+/* header nav ul li:last-child {
+  background: rgb(48, 200, 214);
+  text-align: center;
+  padding: 10px 30px;
+  color: #fff;
+  margin-top: -10px;
+  font-size: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+} */
+
+.main-wrapper {
+  width: 100%;
+  margin-top: 160px;
+}
+.copy-container {
+  margin-left: 10px;
+}
+.copy-container h1 {
+  color: #88e7ce;
+}
+.copy-container h2 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.lesson-list {
+  width: 100%;
+}
+
+.lesson-list h3 {
+  font-weight: normal;
+  margin-left: 10px;
+}
+.lesson-list img {
+  width: 200px;
+  margin-bottom: 20px;
+}
+.lesson-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 23.3% 23.3% 23.3% 23.3%;
+  grid-gap: 15px;
+}
+.lesson-card {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.lesson-item {
+  background: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  /* margin-right: 10px; */
+  width: 100%;
+  cursor: pointer;
+}
+
+/* for modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #949393;
+  opacity: 0.9;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.modal-inner {
+  margin-top: -100px;
+  width: 40%;
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-inner .modal-introduction h2 {
+  text-align: center;
+}
+
+.modal-inner .modal-introduction p {
+  padding: 0 60px;
+}
+.modal-inner button {
+  cursor: pointer;
+  outline: none;
+  background: rgb(48, 200, 214);
+  border: none;
+  color: #fff;
+  width: 150px;
+  padding: 10px;
+}
+.modal-inner button:hover {
+  background: #eee;
+  transition: 0.3s ease-in-out;
+}
+/* reponsiveness */
+@media screen and (max-width: 912px) {
+  .lesson-container {
+    grid-template-columns: 50% 50%;
+  }
+  .lesson-list img {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  header nav .nav-items ul {
+    display: none;
+  }
+  .main-wrapper {
+    margin-bottom: 60px;
+  }
+  .lesson-container {
+    grid-template-columns: 80%;
+  }
+  .modal-inner {
+    margin-top: -60px;
+    width: 80%;
+    padding: 6px;
+  }
 }
